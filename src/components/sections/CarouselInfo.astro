@@ -1,34 +1,8 @@
 ---
-import { Image } from "astro:assets";
-import acaoSocial from "../../../public/carrousel/ACAO_SOCIAL.webp";
-import atencao from "../../../public/carrousel/ATENÇÃO.webp";
-import entrada from "../../../public/carrousel/ENTRADA.webp";
-import evento from "../../../public/carrousel/EVENTO.webp";
-import oficinas from "../../../public/carrousel/OFICINAS.webp";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
-const carouselImages = [
-  {
-    src: acaoSocial,
-    alt: "",
-  },
-  {
-    src: atencao,
-    alt: "",
-  },
-  {
-    src: entrada,
-    alt: "",
-  },
-  {
-    src: evento,
-    alt: "",
-  },
-  {
-    src: oficinas,
-    alt: "",
-  },
-];
+const images = import.meta.glob("/public/carrousel/carouselInfo/*.{webp,webp}");
 ---
 
 <style>
@@ -41,21 +15,24 @@ const carouselImages = [
 </style>
 
 <section class="py-36 px-5">
-  <div class="relative px-14 max-w-[59.5rem] m-auto">
+  <div class="relative xs:px-14 max-w-[59.5rem] m-auto">
     <!-- Carrossel de imagens -->
     <div class="swiper swiper-info max-w-[52.5rem]">
       <div class="swiper-wrapper">
         {
-          carouselImages.map((image) => (
+          Object.keys(images).map((imgPath) => (
             <div class="swiper-slide">
-              <Image
-                src={image.src}
-                width={256}
-                height={270.87}
-                alt={image.alt}
-                loading="eager"
-                class="m-auto border-[10px] border-accent rounded-md"
-              />
+              <div class="max-w-none rounded-md xs:max-w-96 m-auto border-4 border-accent">
+                <Image
+                  src={imgPath.replace("/public", "")}
+                  width={384}
+                  height={384}
+                  alt="Informações sobre o evento"
+                  loading="eager"
+                  quality={100}
+                  class="m-auto size-full xs:size-auto"
+                />
+              </div>
             </div>
           ))
         }
@@ -65,13 +42,13 @@ const carouselImages = [
     <!-- Botões responsável por controlar o carrossel, (prev e next) -->
     <div>
       <button
-        class="prev-info size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 left-0 top-1/2 -translate-y-1/2"
+        class="prev-info size-10 xs:size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-12 bottom-2 xs:left-0 xs:top-1/2 xs:-translate-y-1/2"
       >
         <Icon name="ArrowLeft" size="24" />
       </button>
 
       <button
-        class="next-info size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-0 top-1/2 -translate-y-1/2"
+        class="next-info size-10 xs:size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-2 bottom-2 xs:right-0 xs:top-1/2 xs:-translate-y-1/2"
       >
         <Icon name="ArrowRight" size="24" />
       </button>
@@ -88,7 +65,7 @@ const carouselImages = [
   new Swiper(".swiper-info", {
     modules: [Navigation, Autoplay],
     slidesPerView: 1,
-    spaceBetween: 36,
+    spaceBetween: 15,
     loop: true,
     navigation: {
       nextEl: ".next-info",
@@ -100,11 +77,11 @@ const carouselImages = [
     breakpoints: {
       768: {
         slidesPerView: 2,
-        spaceBetween: 0,
+        spaceBetween: 15,
       },
       1024: {
         slidesPerView: 3,
-        spaceBetween: 0,
+        spaceBetween: 15,
       },
     },
   });
