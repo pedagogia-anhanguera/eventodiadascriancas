@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+---
+
+<style>
+  section {
+    background-image: url("/backgrounds/paper_sides.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+</style>
+
+<section class="py-36 space-y-10">
+  <h2>Apoio</h2>
+
+  <div class="flex flex-wrap gap-10 items-center justify-center">
+    <div>
+      <Image
+        src="/logos/topformaturas.webp"
+        alt=""
+        width={188}
+        height={158.75}
+      />
+    </div>
+
+    <div>
+      <Image src="/others/pedagogy.webp" alt="" width={188} height={65.25} />
+    </div>
+
+    <div>
+      <Image src="/logos/anhanguera.webp" alt="" width={188} height={46.64} />
+    </div>
+
+    <div>
+      <Image src="/logos/tecnohelp.webp" alt="" width={188} height={65.72} />
+    </div>
+  </div>
+</section>
