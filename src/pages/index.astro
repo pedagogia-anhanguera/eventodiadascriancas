@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Home from "../components/sections/Home.astro";
+import CarouselInfo from "../components/sections/CarouselInfo.astro";
+import About from "../components/sections/About.astro";
+import CarouselEvent from "../components/sections/CarouselEvent.astro";
+import Localization from "../components/sections/Localization.astro";
+import Suport from "../components/sections/Suport.astro";
+import FAQs from "../components/sections/FAQs.astro";
+
+const meta = {
+  title: "Dia das crianças",
+  description:
+    "Evento comemorativo do Dia das Crianças idealizada com o propósito de proporcionar aos estudantes a oportunidade de aplicar as propostas pedagógicas com o público infantil, ao mesmo tempo em que promove ações de extensão acadêmica, oferecendo uma noite repleta de diversão e aprendizado tanto para a comunidade local quanto para os discentes da Instituição.",
+};
+---
+
+<Layout title={meta.title} description={meta.description}>
+  <Home />
+  <CarouselInfo />
+  <About />
+  <CarouselEvent />
+  <Localization />
+  <Suport />
+  <FAQs />
+</Layout>
