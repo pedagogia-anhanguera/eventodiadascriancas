@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import Socials from "../Socials.astro";
+---
+
+<style>
+  footer {
+    background-image: url("/backgrounds/paper_down.webp");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+</style>
+
+<footer
+  class="grid grid-cols-1 sm:grid-cols-2 place-items-center min-h-60 px-5 py-16 gap-8"
+>
+  <div class="sm:col-span-2">
+    <Socials />
+  </div>
+
+  <Image src="/others/slogan.webp" alt="Slogan" width="250" height="98.75" />
+
+  <Image
+    src="/others/pedagogy.webp"
+    alt="Disciplina de pedagogia"
+    width="200"
+    height="69.42"
+  />
+</footer>
