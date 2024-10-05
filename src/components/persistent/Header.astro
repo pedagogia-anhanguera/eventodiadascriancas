@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import Socials from "../Socials.astro";
+---
+
+<style>
+  header {
+    background-image: url("/backgrounds/paper_up.webp");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+  }
+</style>
+
+<header class="m-auto h-40 px-5 pt-6">
+  <div class="flex justify-between items-center">
+    <div class="flex items-center gap-8 h-fit">
+      <div
+        class="size-[4.75rem] bg-accent rounded-md flex items-center justify-center"
+      >
+        <Image
+          src="/logo.webp"
+          alt="Logo"
+          width="37"
+          height="57"
+          loading="eager"
+        />
+      </div>
+
+      <nav class="hidden md:block">
+        <ul class="flex flex-col sm:flex-row gap-4 text-xl font-bold">
+          <li><a href="#home" class="hover:underline">Início</a></li>
+          <li><a href="#about" class="hover:underline">Sobre</a></li>
+          <li>
+            <a href="#localization" class="hover:underline">Localização</a>
+          </li>
+          <li>
+            <a href="#questions" class="hover:underline">Perguntas frequentes</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <Socials />
+  </div>
+</header>
