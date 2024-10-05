@@ -22,14 +22,14 @@ const images = import.meta.glob("/public/carrousel/carouselEvent/*.{jpg,jpeg}");
         {
           Object.keys(images).map((imgPath) => (
             <div class="swiper-slide">
-              <div class="w-full h-96 xs:max-w-96 overflow-hidden m-auto rounded-md bg-gray-500/25">
+              <div class="w-full h-96 xs:max-w-96 overflow-hidden m-auto rounded-md bg-gray-500/25 border-4 border-accent">
                 <Image
-                  src={imgPath}
+                  src={imgPath.replace('/public', '')}
                   width={384}
                   height={384}
                   alt="Imagem do evento"
                   loading="lazy"
-                  class="object-cover w-full h-full"
+                  class="object-cover size-full"
                 />
               </div>
             </div>
@@ -41,13 +41,15 @@ const images = import.meta.glob("/public/carrousel/carouselEvent/*.{jpg,jpeg}");
     <!-- Botões responsável por controlar o carrossel, (prev e next) -->
     <div>
       <button
-        class="prev-event size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-14 bottom-1 xs:left-0 xs:top-1/2 xs:-translate-y-1/2"
+      type="button"
+        class="prev-event size-10 xs:size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-12 bottom-2 xs:left-0 xs:top-1/2 xs:-translate-y-1/2"
       >
         <Icon name="ArrowLeft" size="24" />
       </button>
 
       <button
-        class="next-event size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-1 bottom-1 xs:right-0 xs:top-1/2 xs:-translate-y-1/2"
+      type="button"
+        class="next-event size-10 xs:size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-2 bottom-2 xs:right-0 xs:top-1/2 xs:-translate-y-1/2"
       >
         <Icon name="ArrowRight" size="24" />
       </button>
@@ -76,7 +78,7 @@ const images = import.meta.glob("/public/carrousel/carouselEvent/*.{jpg,jpeg}");
     breakpoints: {
       960: {
         slidesPerView: 2,
-        spaceBetween: 0,
+        spaceBetween: 15,
       },
     },
   });
