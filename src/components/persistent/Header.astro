@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Socials from "../Socials.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <style>
@@ -14,7 +15,7 @@ import Socials from "../Socials.astro";
 
 <header class="m-auto h-40 px-5 pt-6">
   <div class="flex justify-between items-center">
-    <div class="flex items-center gap-8 h-fit">
+    <div class="flex items-center gap-4 h-fit">
       <div
         class="size-16 bg-accent rounded-md flex items-center justify-center shadow-xl"
       >
@@ -27,21 +28,70 @@ import Socials from "../Socials.astro";
         />
       </div>
 
-      <nav class="hidden md:block">
-        <ul class="flex flex-col sm:flex-row gap-4 text-xl font-bold">
-          <li><a href="#home" class="hover:underline">Início</a></li>
-          <li><a href="#about" class="hover:underline">Sobre</a></li>
+      <nav
+        class="fixed xs:static z-20 bg-accent xs:bg-transparent -right-64 top-0 w-64 xs:w-fit h-screen xs:h-fit duration-200 transition-[right]"
+      >
+        <div class="flex justify-between items-center px-2">
+          <div
+            class="size-16 bg-accent scale-75 rounded-md flex items-center justify-center shadow-xl xs:hidden"
+          >
+            <Image
+              src="/logo.webp"
+              alt="Logo"
+              width="30"
+              height="45.75"
+              loading="eager"
+            />
+          </div>
+
+          <button type="button" class="closeMenu ml-auto xs:hidden">
+            <Icon name="X" size="28" />
+          </button>
+        </div>
+
+        <hr class="border-black xs:hidden" />
+
+        <ul
+          class="flex pt-5 xs:p-0 flex-col xs:flex-row items-center h-full gap-2.5 font-bold"
+        >
+          <li><a href="#home" class="hover:underline block">Início</a></li>
+          <li><a href="#about" class="hover:underline block">Sobre</a></li>
           <li>
-            <a href="#localization" class="hover:underline">Localização</a>
+            <a href="#localization" class="hover:underline block">Localização</a
+            >
           </li>
           <li>
-            <a href="#questions" class="hover:underline">Perguntas frequentes</a
-            >
+            <a href="#questions" class="hover:underline block">Perguntas</a>
           </li>
         </ul>
       </nav>
     </div>
 
-    <Socials />
+    <div class="hidden xs:block">
+      <Socials />
+    </div>
+
+    <button type="button" class="openMenu xs:hidden">
+      <Icon name="Menu" size="28" />
+    </button>
   </div>
 </header>
+
+<script>
+  const openMenu = document.querySelector(".openMenu");
+  const closeMenu = document.querySelector(".closeMenu");
+
+  const nav = document.querySelector("nav");
+
+  // Abre a barra de navegação
+  openMenu?.addEventListener("click", () => {
+    nav?.classList.toggle("right-0");
+    nav?.classList.toggle("-right-64");
+  });
+
+  // Fecha a barra de navegação
+  closeMenu?.addEventListener("click", () => {
+    nav?.classList.toggle("right-0");
+    nav?.classList.toggle("-right-64");
+  });
+</script>
