@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Qual a data e horário do evento?",
+    "description": "O evento acontecerá no dia 11 de outubro, das 19h às 20h30."
+  },
+  {
+    "id": 2,
+    "title": "Onde será realizado o evento?",
+    "description": "O evento será na Av. Dr. Alberto Benedetti, 444 - Vila Assunção, Santo André - SP, na Faculdade Anhanguera de Santo André."
+  },
+  {
+    "id": 3,
+    "title": "Quem pode participar do evento?",
+    "description": "O evento é aberto ao público e destinado a crianças de todas as idades. No entanto, todas as crianças devem estar acompanhadas de um adulto responsável."
+  },
+  {
+    "id": 4,
+    "title": "O que será oferecido no evento?",
+    "description": "Teremos diversas oficinas, brincadeiras e atividades recreativas para as crianças, além de muita diversão em família!"
+  },
+  {
+    "id": 5,
+    "title": "Preciso pagar para participar do evento?",
+    "description": "Não, a participação é gratuita. No entanto, estamos arrecadando materiais escolares (caneta, cola, papel sulfite, caderno universitário) para doação à instituição Irmã Marli."
+  },
+  {
+    "id": 6,
+    "title": "Como posso contribuir com a arrecadação de materiais escolares?",
+    "description": "Basta trazer sua doação no dia do evento! Estamos aceitando materiais como caneta, cola, papel sulfite e caderno universitário."
+  },
+  {
+    "id": 7,
+    "title": "Preciso me inscrever para participar do evento?",
+    "description": "Não, não é necessário fazer inscrição prévia. É só comparecer no local e aproveitar as atividades!"
+  },
+  {
+    "id": 8,
+    "title": "Há limite de idade para as crianças?",
+    "description": "Não há um limite de idade específico, mas todas as crianças devem estar acompanhadas por um adulto responsável."
+  },
+  {
+    "id": 9,
+    "title": "Posso trazer mais de uma criança?",
+    "description": "Sim, você pode trazer quantas crianças quiser, desde que todas estejam acompanhadas de um adulto responsável."
+  },
+  {
+    "id": 10,
+    "title": "Em caso de dúvidas, com quem posso falar?",
+    "description": "Você pode entrar em contato conosco pelo e-mail ou telefone disponível na página de contato do site."
+  }
+]
