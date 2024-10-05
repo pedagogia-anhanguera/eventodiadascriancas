@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socials = [
+  {
+    title: "Facebook",
+    href: "https://www.facebook.com/people/Pedagogia-Anhanguera-SA/61566396340440/",
+  },
+  {
+    title: "Instagram",
+    href: "https://www.instagram.com/pedagogia.anhanguerasa/",
+  },
+];
+---
+
+<div class="flex gap-4">
+  {
+    socials.map((social) => (
+      <a
+        href={social.href}
+        target="_blank"
+        aria-label={`Acessa a página no ${social.title}`}
+        class="size-12 bg-accent rounded-full flex items-center justify-center shadow-xl hover:bg-accent/80 duration-200"
+      >
+        <Icon name={social.title} size="20" />
+      </a>
+    ))
+  }
+</div>
