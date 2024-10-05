@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components";
+import faqs from "../../utils/FAQs.json";
+---
+
+<section class="py-10 space-y-10 text-white px-5" id="questions">
+  <h2>Perguntas frequentes</h2>
+
+  <div
+    class="max-w-[45.5rem] bg-accent w-full m-auto rounded-md border border-primary divide-y divide-primary"
+  >
+    {
+      faqs.map((question) => (
+        <>
+          {question.id === 1 ? (
+            <details open class="group duration-200 open:bg-primary/25">
+              <summary class="list-none flex justify-between text-lg font-bold hover:underline cursor-pointer p-5">
+                <span>
+                  {question.id}. {question.title}
+                </span>
+                <span>
+                  <Icon
+                    name="ArrowDown"
+                    size="24"
+                    class="group-open:-rotate-180 duration-200"
+                  />
+                </span>
+              </summary>
+
+              <p class="p-5 pt-0">{question.description}</p>
+            </details>
+          ) : (
+            <details class="group duration-200 open:bg-primary/25">
+              <summary class="list-none flex justify-between text-lg font-bold hover:underline cursor-pointer p-5">
+                <span>
+                  {question.id}. {question.title}
+                </span>
+                <span>
+                  <Icon
+                    name="ArrowDown"
+                    size="24"
+                    class="group-open:-rotate-180 duration-200"
+                  />
+                </span>
+              </summary>
+
+              <p class="p-5 pt-0">{question.description}</p>
+            </details>
+          )}
+        </>
+      ))
+    }
+  </div>
+</section>
