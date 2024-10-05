@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets";
+import acaoSocial from "../../../public/carrousel/ACAO_SOCIAL.webp";
+import atencao from "../../../public/carrousel/ATENÇÃO.webp";
+import entrada from "../../../public/carrousel/ENTRADA.webp";
+import evento from "../../../public/carrousel/EVENTO.webp";
+import oficinas from "../../../public/carrousel/OFICINAS.webp";
+import { Icon } from "astro-icon/components";
+
+const carouselImages = [
+  {
+    src: acaoSocial,
+    alt: "",
+  },
+  {
+    src: atencao,
+    alt: "",
+  },
+  {
+    src: entrada,
+    alt: "",
+  },
+  {
+    src: evento,
+    alt: "",
+  },
+  {
+    src: oficinas,
+    alt: "",
+  },
+];
+---
+
+<style>
+  section {
+    background-image: url("/backgrounds/paper_sides.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+</style>
+
+<section class="py-36 px-5">
+  <div class="relative px-14 max-w-[59.5rem] m-auto">
+    <!-- Carrossel de imagens -->
+    <div class="swiper swiper-info max-w-[52.5rem]">
+      <div class="swiper-wrapper">
+        {
+          carouselImages.map((image) => (
+            <div class="swiper-slide">
+              <Image
+                src={image.src}
+                width={256}
+                height={270.87}
+                alt={image.alt}
+                loading="eager"
+                class="m-auto border-[10px] border-accent rounded-md"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Botões responsável por controlar o carrossel, (prev e next) -->
+    <div>
+      <button
+        class="prev-info size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 left-0 top-1/2 -translate-y-1/2"
+      >
+        <Icon name="ArrowLeft" size="24" />
+      </button>
+
+      <button
+        class="next-info size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-0 top-1/2 -translate-y-1/2"
+      >
+        <Icon name="ArrowRight" size="24" />
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Autoplay } from "swiper/modules";
+  import "swiper/css";
+
+  // Responsável por instânciar e configurar o carrossel
+  const swiper = new Swiper(".swiper-info", {
+    modules: [Navigation, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 36,
+    loop: true,
+    navigation: {
+      nextEl: ".next-info",
+      prevEl: ".prev-info",
+    },
+    autoplay: {
+      delay: 3000,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    },
+  });
+</script>
