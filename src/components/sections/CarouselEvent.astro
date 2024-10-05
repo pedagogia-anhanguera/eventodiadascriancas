@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+const images = import.meta.glob("/public/carrousel/carouselEvent/*.{jpg,jpeg}");
+---
+
+<style>
+  section {
+    background-image: url("/backgrounds/paper_sides.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+</style>
+
+<section class="py-36 px-5">
+  <div class="relative xs:px-14 max-w-[59.5rem] m-auto">
+    <!-- Carrossel de imagens -->
+    <div class="swiper swiper-event max-w-[52.5rem]">
+      <div class="swiper-wrapper">
+        {
+          Object.keys(images).map((imgPath) => (
+            <div class="swiper-slide">
+              <div class="w-full h-96 xs:max-w-96 overflow-hidden m-auto rounded-md bg-gray-500/25">
+                <Image
+                  src={imgPath}
+                  width={384}
+                  height={384}
+                  alt="Imagem do evento"
+                  loading="lazy"
+                  class="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Botões responsável por controlar o carrossel, (prev e next) -->
+    <div>
+      <button
+        class="prev-event size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-14 bottom-1 xs:left-0 xs:top-1/2 xs:-translate-y-1/2"
+      >
+        <Icon name="ArrowLeft" size="24" />
+      </button>
+
+      <button
+        class="next-event size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-1 bottom-1 xs:right-0 xs:top-1/2 xs:-translate-y-1/2"
+      >
+        <Icon name="ArrowRight" size="24" />
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Autoplay } from "swiper/modules";
+  import "swiper/css";
+
+  // Responsável por instânciar e configurar o carrossel
+  new Swiper(".swiper-event", {
+    modules: [Navigation, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 15,
+    loop: true,
+    navigation: {
+      nextEl: ".next-event",
+      prevEl: ".prev-event",
+    },
+    autoplay: {
+      delay: 10000,
+    },
+    breakpoints: {
+      960: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+    },
+  });
+</script>
