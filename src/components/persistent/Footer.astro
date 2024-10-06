@@ -1,6 +1,10 @@
 ---
+
+import pedagogy from '@/images/others/pedagogy.webp'
+import slogan from '@/images/others/slogan.webp'
+import Socials from "../others/Socials.astro";
+
 import { Image } from "astro:assets";
-import Socials from "../Socials.astro";
 ---
 
 <style>
@@ -19,10 +23,10 @@ import Socials from "../Socials.astro";
     <Socials />
   </div>
 
-  <Image src="/others/slogan.webp" alt="Slogan" width="250" height="98.75" />
+  <Image src={slogan} alt="Slogan" width="250" height="98.75" />
 
   <Image
-    src="/others/pedagogy.webp"
+    src={pedagogy}
     alt="Disciplina de pedagogia"
     width="200"
     height="69.42"

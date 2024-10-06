@@ -1,4 +1,9 @@
 ---
+import topFormaturas from "@/images/logos/top_formaturas.webp";
+import pedagogy from "@/images//others/pedagogy.webp";
+import anhanguera from "@/images/logos/anhanguera.webp";
+import tecnohelp from "@/images/logos/tecnohelp.webp";
+
 import { Image } from "astro:assets";
 ---
 
@@ -16,24 +21,19 @@ import { Image } from "astro:assets";
 
   <div class="flex flex-wrap gap-10 items-center justify-center">
     <div>
-      <Image
-        src="/logos/topformaturas.webp"
-        alt=""
-        width={188}
-        height={158.75}
-      />
+      <Image src={topFormaturas} alt="" width={188} height={158.75} />
     </div>
 
     <div>
-      <Image src="/others/pedagogy.webp" alt="" width={188} height={65.25} />
+      <Image src={pedagogy} alt="" width={188} height={65.25} />
     </div>
 
     <div>
-      <Image src="/logos/anhanguera.webp" alt="" width={188} height={46.64} />
+      <Image src={anhanguera} alt="" width={188} height={46.64} />
     </div>
 
     <div>
-      <Image src="/logos/tecnohelp.webp" alt="" width={188} height={65.72} />
+      <Image src={tecnohelp} alt="" width={188} height={65.72} />
     </div>
   </div>
 </section>

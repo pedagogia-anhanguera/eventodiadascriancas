@@ -1,7 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import Socials from "../Socials.astro";
+import Socials from "../others/Socials.astro";
+import logo from "@/images/others/logo.webp";
+
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 ---
 
 <style>
@@ -20,7 +22,7 @@ import { Icon } from "astro-icon/components";
         class="size-16 bg-accent rounded-md flex items-center justify-center shadow-xl"
       >
         <Image
-          src="/others/logo.webp"
+          src={logo}
           alt="Logo"
           width="30"
           height="45.75"
@@ -36,7 +38,7 @@ import { Icon } from "astro-icon/components";
             class="size-16 bg-accent scale-75 rounded-md flex items-center justify-center shadow-xl xs:hidden"
           >
             <Image
-              src="/others/logo.webp"
+              src={logo}
               alt="Logo"
               width="30"
               height="45.75"

@@ -1,8 +1,46 @@
 ---
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
+import image01 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0016.jpg";
+import image02 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0017.jpg";
+import image03 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0018.jpg";
+import image04 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0019.jpg";
+import image05 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0020.jpg";
+import image06 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0021.jpg";
+import image07 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0022.jpg";
+import image08 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0023.jpg";
+import image09 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0024.jpg";
+import image10 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0025.jpg";
+import image11 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0026.jpg";
+import image12 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0027.jpg";
+import image13 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0028.jpg";
+import image14 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0029.jpg";
+import image15 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0030.jpg";
+import image16 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0031.jpg";
+import image17 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0032.jpg";
+import image18 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0033.jpg";
 
-const images = import.meta.glob("/public/carrousel/carouselEvent/*.{jpg,jpeg}");
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+const images02 = [
+  image01,
+  image02,
+  image03,
+  image04,
+  image05,
+  image06,
+  image07,
+  image08,
+  image09,
+  image10,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
+  image16,
+  image17,
+  image18,
+];
 ---
 
 <style>
@@ -20,13 +58,13 @@ const images = import.meta.glob("/public/carrousel/carouselEvent/*.{jpg,jpeg}");
     <div class="swiper swiper-event max-w-[52.5rem]">
       <div class="swiper-wrapper">
         {
-          Object.keys(images).map((imgPath) => (
+          images02.map((image) => (
             <div class="swiper-slide">
               <div class="w-full h-96 xs:max-w-96 overflow-hidden m-auto rounded-md bg-gray-500/25 border-4 border-accent">
                 <Image
-                  src={imgPath.replace('/public', '')}
-                  width={384}
-                  height={384}
+                  src={image}
+                  width={image.width / 1.5}
+                  height={image.height / 1.5}
                   alt="Imagem do evento"
                   loading="lazy"
                   class="object-cover size-full"
@@ -41,14 +79,14 @@ const images = import.meta.glob("/public/carrousel/carouselEvent/*.{jpg,jpeg}");
     <!-- Botões responsável por controlar o carrossel, (prev e next) -->
     <div>
       <button
-      type="button"
+        type="button"
         class="prev-event size-10 xs:size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-12 bottom-2 xs:left-0 xs:top-1/2 xs:-translate-y-1/2"
       >
         <Icon name="ArrowLeft" size="24" />
       </button>
 
       <button
-      type="button"
+        type="button"
         class="next-event size-10 xs:size-12 bg-accent rounded-full flex items-center justify-center absolute z-10 right-2 bottom-2 xs:right-0 xs:top-1/2 xs:-translate-y-1/2"
       >
         <Icon name="ArrowRight" size="24" />
