@@ -1,0 +1,30 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"h2"> {}
+
+const { ...attrs } = Astro.props;
+---
+
+<style>
+  h2 {
+    font-family: "Lilita One", system-ui;
+    color: #ffffff;
+    text-shadow:
+      3px 3px 0 #2c74a0,
+      3px -3px 0 #2c74a0,
+      -3px 3px 0 #2c74a0,
+      -3px -3px 0 #2c74a0,
+      3px 0px 0 #2c74a0,
+      0px 3px 0 #2c74a0,
+      -3px 0px 0 #2c74a0,
+      0px -3px 0 #2c74a0;
+  }
+</style>
+
+<h2
+  class="text-center text-5xl"
+  {...attrs}
+>
+  <slot />
+</h2>
