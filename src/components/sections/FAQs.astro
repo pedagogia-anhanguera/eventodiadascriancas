@@ -1,13 +1,16 @@
 ---
-import { Icon } from "astro-icon/components";
 import faqs from "../../utils/FAQs.json";
+import H2Title from "../others/H2Title.astro";
+
+import { Icon } from "astro-icon/components";
 ---
 
-<section class="py-10 space-y-10 text-white px-5" id="questions">
-  <h2>Perguntas frequentes</h2>
+<section class="py-10 space-y-10 px-5" id="questions">
+  <H2Title>Perguntas frequentes</H2Title>
+
 
   <div
-    class="max-w-[45.5rem] bg-accent w-full m-auto rounded-md border border-primary divide-y divide-primary"
+    class="max-w-[45.5rem] text-white bg-accent w-full m-auto rounded-md border border-primary divide-y divide-primary"
   >
     {
       faqs.map((question) => (

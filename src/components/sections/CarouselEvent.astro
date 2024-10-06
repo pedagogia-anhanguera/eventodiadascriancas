@@ -17,21 +17,22 @@ import image15 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0030.jpg";
 import image16 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0031.jpg";
 import image17 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0032.jpg";
 import image18 from "@/images/carrousel/carouselEvent/IMG-20241004-WA0033.jpg";
+import H2Title from "../others/H2Title.astro";
 
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
 const images02 = [
-  image01,
   image02,
-  image03,
   image04,
   image05,
+  image10,
   image06,
+  image01,
+  image03,
   image07,
   image08,
   image09,
-  image10,
   image11,
   image12,
   image13,
@@ -52,7 +53,9 @@ const images02 = [
   }
 </style>
 
-<section class="py-36 px-5">
+<section class="py-36 px-5 space-y-10">
+  <H2Title>Galeria</H2Title>
+
   <div class="relative xs:px-14 max-w-[59.5rem] m-auto">
     <!-- Carrossel de imagens -->
     <div class="swiper swiper-event max-w-[52.5rem]">

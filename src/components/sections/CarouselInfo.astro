@@ -8,6 +8,8 @@ import image05 from "@/images/carrousel/carouselInfo/05.webp";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
+import H2Title from "../others/H2Title.astro";
+
 const images = [image01, image02, image03, image04, image05];
 ---
 
@@ -20,7 +22,9 @@ const images = [image01, image02, image03, image04, image05];
   }
 </style>
 
-<section class="py-36 px-5">
+<section class="py-36 px-5 space-y-10">
+  <H2Title>Avisos</H2Title>
+
   <div class="relative xs:px-14 max-w-[59.5rem] m-auto">
     <!-- Carrossel de imagens -->
     <div class="swiper swiper-info max-w-[52.5rem]">
